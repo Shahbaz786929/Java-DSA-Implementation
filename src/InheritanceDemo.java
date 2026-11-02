@@ -29,7 +29,7 @@ class Car extends Vehicle {
     String fuelType; // Petrol, Diesel, Electric
 
     Car(String brand, int speed, int doors, String fuelType) {
-        super(brand, speed); // Call Vehicle constructor
+        super(brand, speed); // Call Vehicle constructor paresnt clss cinstruictire
         this.doors = doors;
         this.fuelType = fuelType;
     }
@@ -38,6 +38,7 @@ class Car extends Vehicle {
         displayInfo();
         System.out.println("Number of Doors: " + doors);
         System.out.println("Fuel Type: " + fuelType);
+        System.out.println("Car Brand :" + brand);
     }
 
     // Overriding start() method

@@ -35,6 +35,7 @@ abstract class TransportUnit {
     public void showInfo() { // concrete method
         System.out.println("Brand: " + brand + ", Model: " + model + ", Speed: " + speed + " km/h");
     }
+
 }
 
 // ---------------- Subclasses ----------------
@@ -68,7 +69,7 @@ class SmartBike extends TransportUnit implements ElectricVehicle {
     private int batteryLevel;
 
     public SmartBike(String brand, String model, int batteryLevel) {
-        super(brand, model);
+        super(brand, model); // access the abstract class constructure
         this.batteryLevel = batteryLevel;
     }
 
