@@ -18,10 +18,17 @@ public class ProductLinkedList {
     Node head;
     int count = 0;
 
-    public void InsertAtPosition(Product p, int pos){
+    public boolean insertAtPosition(Product p, int pos){
         Node newNode=new Node(p);
-        if(head==null){
-            System.out.println("Empty linked list");
+
+        if (pos<1 || pos>count+1){
+            return false;
+        }
+        if(pos==1){
+            newNode.next=head;
+            head=newNode;
+            count++;
+            return true;
         }
         Node current=head;
 
@@ -32,20 +39,21 @@ public class ProductLinkedList {
         newNode.next=current.next;
         current.next=newNode;
         count++;
+        return true;
     }
 
     // 2. Delete all products exceeding or equal to minPrice
     public int deleteByPriceThreshold(double minPrice){
         int deleteCount=0;
 
-        while (head != null && head.data.price >= minPrice)
+        while (head != null && head.data.price >= minPrice) {
             head = head.next;
-        deleteCount++;
-        count--;
+            deleteCount++;
+            count--;
 
-
+        }
         Node current=head;
-        while(current.next!=null){
+        while(current != null && current.next != null){
             if(current.next.data.price>=minPrice){
                 current.next=current.next.next;
                 deleteCount++;

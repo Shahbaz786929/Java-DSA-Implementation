@@ -7,7 +7,7 @@ public class Product {
     double price;
     double rating;
 
-    public Product(int pid, String name, String category, double price, double rating) {
+    public Product(int pid, String name, String category, double rating, double price) {
         this.pid = pid;
         this.name = name;
         this.category = category;
